@@ -32,7 +32,7 @@
         <span flex></span>
 
         <div class="group-page__funders-admin-btn" layout="row" layout-align="center center" ng-click="downloadCSV()" ng-if="membership.isAdmin">
-          <div class="group-page__funders-admin-btn-label">Download as CSV</div>
+          <div class="group-page__funders-admin-btn-label">Download Membership Report</div>
         </div>
       </div>
 
@@ -55,6 +55,15 @@
               <span class="group-page__funder-admin-label" ng-if="membership.isAdmin && funderMembership.member().currentSignInAt">Last activity at {{ funderMembership.member().updatedAt | exactDateNoWeek }}</span>
               <span class="group-page__funder-admin-label" ng-if="membership.isAdmin && !funderMembership.member().currentSignInAt">Funder has never signed in</span>
             </div>
+
+            <md-button layout="column" layout-align="center end" class="group-page__funder-saving-container" ng-if="funderMembership.id == membership.id">
+            <span class="group-page__funder-saving"
+                ng-class=""
+                ng-click="indicateSaving(membership)"
+            >
+                save?
+            </span>
+            </md-button>
 
             <div layout="column" layout-align="center end" class="group-page__funder-balance-container">
               <span class="group-page__funder-balance"

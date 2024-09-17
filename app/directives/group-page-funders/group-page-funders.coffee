@@ -19,9 +19,9 @@ global.cobudgetApp.directive 'groupPageFunders', () ->
 
       $scope.downloadCSV = ->
         timestamp = moment().format('YYYY-MM-DD-HH-mm-ss')
-        filename = "#{$scope.group.name}-member-data-#{timestamp}"
+        filename = "#{$scope.group.name}-member-report-#{timestamp}"
         params =
-          url: "#{config.apiPrefix}/memberships.csv?group_id=#{$scope.group.id}"
+          url: "#{config.apiPrefix}/memberships/report.csv?group_id=#{$scope.group.id}"
           filename: filename
         DownloadCSV(params)
 

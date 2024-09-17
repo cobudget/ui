@@ -46,6 +46,17 @@
           </div>
         </div>
       </md-list-item>
+
+      <md-divider class="group-page__buckets-divider"></md-divider>
+
+      <md-list-item ng-if="membership.balance > 1" md-no-ink ng-click="indicateSaving(membership)" class="group-page__buckets-list-item">
+        <div layout="column" flex class="group-page__bucket-container">
+          <div layout="row" layout-align="start center" class="group-page__bucket-indicate-saving">
+            <small>Nothing strike your fancy? Click to save funds for later.</small>
+          </div>
+        </div>
+      </md-list-item>
+
     </md-list>
   </md-card>
 

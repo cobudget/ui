@@ -193,6 +193,11 @@
   font-weight: 400;
 }
 
+.group-page__bucket-indicate-saving {
+  color: #767676;
+  font-style: italic;
+}
+
 @media (max-width: 380px) {
   .group-page__bucket-title {
     @include fontMedium;
@@ -206,3 +211,4 @@
     @include fontTiny;
   }
 }
+
