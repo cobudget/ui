@@ -21,6 +21,14 @@ global.cobudgetApp.factory 'UserModel', (BaseModel) ->
       @belongsTo 'subscriptionTracker'
       @hasMany 'announcements', with: 'announcementId'
 
+    groupsToDisplay: () ->
+      selectMemberships = _.filter @memberships(), (membership) ->
+        membership.id
+
+      groupIds = _.map selectMemberships, (membership) ->
+        membership.groupId
+      @recordStore.groups.find(groupIds)
+
     groups: () ->
       groupIds = _.map @memberships(), (membership) ->
         membership.groupId

@@ -11,7 +11,7 @@ global.cobudgetApp.directive 'groupPageSidenav', () ->
         $mdSidenav('left').open()
 
       $scope.accessibleGroups = ->
-        CurrentUser() && CurrentUser().groups()
+        CurrentUser() && CurrentUser().groupsToDisplay()
 
       $scope.redirectToGroupPage = (groupId) ->
         if $state.current.name == 'group' && $scope.group.id == parseInt(groupId)
